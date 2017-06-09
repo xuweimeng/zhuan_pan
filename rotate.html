@@ -9,51 +9,85 @@
 		}
 		#parent{
 			position: relative;
-			width: 450px;
-			height: 450px;
+			width: 310px;
+			height: 310px;
 		}
 		#rotate{
-			width: 450px;
-			height: 450px;
+			width: 310px;
+			height: 310px;
 			transition: all 3s;
 		}
 		#zhen{
 			position: absolute;
-			left: 133px;
-			top: 98px;
-			width: 174px;
-			height: 228px;
+			left: 86px;
+			top: 65px;
+			width: 130px;
+			height: 154px;
 
+		}
+		.aa{
+			width: 130px;
+			height: 154px;
 		}
 	</style>
 	<script src="jquery.min.js" type="text/javascript" ></script>
 </head>
 <body>
 	<div id="parent">
-		<div id="rotate"><img src="turntable.png"></div>
-		<div id="zhen"><img src="pointer2.png"></div>
+		<div id="rotate"><img src="0.png"></div>
+		<div id="zhen"><img class="aa" src="pointer2.png"></div>
 	</div>
 
 	<script type="text/javascript">
 		$(function(){
 
+			var bTag = 0;//点击次数
 			$('#zhen').click(function(){
-				//5quan=1800
+				// $.ajax({
+				// 	url:'',
+				// 	type:'get',
+				// 	data:{
+				// 		userId:userId
+				// 	},
+				// 	success:function(data){
+				// 		if(data.result){
+				// 			console.log('您有一次抽奖机会');
+				// 			//5quan=1800 最低旋转180度
+				// 			if(data.code == 1){//一等奖
+				// 				var  aa = Math.floor(Math.random()*46)+(2160+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 2){//二等奖
+				// 				var  aa = Math.floor(Math.random()*46)+(2115+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 3){
+				// 				var  aa = Math.floor(Math.random()*46)+(2070+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 4){
+				// 				var  aa = Math.floor(Math.random()*46)+(2025+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 5){
+				// 				var  aa = Math.floor(Math.random()*46)+(1980+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 6){
+				// 				var  aa = Math.floor(Math.random()*46)+(1935+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 7){
+				// 				var  aa = Math.floor(Math.random()*46)+(1890+bTag*1800)+'deg';
+				// 			}
+				// 			if(data.code == 8){
+				// 				var  aa = Math.floor(Math.random()*46)+(1800+bTag*1800)+'deg';
+				// 			}
+				// 		}
+				// 	}
+				// })
 
-				// //一等奖
-				var  aa = Math.random()*65+2128+'deg';
-				//五等奖
-				// var  aa = Math.random()*73+1836+'deg';
-				//四等奖
-				// var  aa = Math.random()*73+1908+'deg';
-				//三等奖
-				// var  aa = Math.random()*73+2052+'deg';
-				//二等奖
-				// var  aa = Math.random()*73+2124+'deg';
-
+var  aa = Math.floor(Math.random()*46)+(2160+bTag*1800)+'deg';
+				bTag++;
 				var cc = "rotate("+aa+")";
+				console.log(cc);
 
 				$("#rotate").css({'transform':cc})
+
 
 			})
 		})
